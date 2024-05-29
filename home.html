@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia dos Namorados</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Efeito de neve -->
+    <div id="snowfall"></div>
+
+    <!-- Header -->
+    <header class="text-center py-5">
+        <h1>Feliz Dia dos Namorados, baby tube</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#fotos">Fotos</a>
+            <a href="#videos">Vídeos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Seção de Introdução -->
+    <section id="inicio" class="text-center py-5">
+        <div class="container intro-section">
+            <h2>Bem-vinda, ao nosso mundo mágico fictício de Harry Potter, amor!</h2>
+            <p class="lead">Uma pequena homenagem para nós dois.</p>
+            <img src="img/restaurante.jpeg" alt="Nós dois" class="img-fluid rounded-circle mb-4" width="200">
+            <p>Mais 1 dia dos namorados ao teu lado e isso é motivo de muita felicidade na minha vida!!! Obrigado por
+                ser essa namorada maravilhosa, atenciosa, paciente e comprometida.
+                Tenho certeza e convicção do futuro brilhante que nos espera. Você é linda, você é uma princesa e eu te
+                amo muito! Que o Senhor continue estendendo Sua mão sobre nossas vidas e nosso relacionamento,
+                que tudo de bom venha para o nosso caminho e que todos nosso planos sejam concretizados. Abaixo deixei
+                umas lembranças dos nossos momentos &#10084;&#10084;&#10084;</p>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="fotos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Algumas das nossas memórias</h2>
+            <div id="carouselFotos" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <img src="img/catuama.jpeg" class="carousel-img" alt="Foto 1">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="img/ano-novo.jpeg" class="carousel-img" alt="Foto 2">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="img/maceio.jpeg" class="carousel-img" alt="Foto 3">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="img/natal-espelho.jpeg" class="carousel-img" alt="Foto 4">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="img/natal-espelho2.jpeg" class="carousel-img" alt="Foto 5">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="img/natal-frontal.jpeg" class="carousel-img" alt="Foto 6">
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselFotos" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselFotos" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Vídeos -->
+    <section id="videos" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Nossos Vídeos</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SeuVideoID1"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SeuVideoID2"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Deixe uma Mensagem</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" class="form-control" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 - Sua Mensagem Especial</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script para efeito de neve -->
+    <script>
+        (function () {
+            const snowContainer = document.getElementById('snowfall');
+            const snowflakeCount = 100;
+
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.width = Math.random() * 5 + 2 + 'px';
+                snowflake.style.height = snowflake.style.width;
+                snowflake.style.left = Math.random() * window.innerWidth + 'px';
+                snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+                snowflake.style.animationDelay = Math.random() * 5 + 's';
+                snowContainer.appendChild(snowflake);
+
+                snowflake.addEventListener('animationend', function () {
+                    snowflake.remove();
+                });
+            }
+
+            for (let i = 0; i < snowflakeCount; i++) {
+                setTimeout(createSnowflake, Math.random() * 5000);
+            }
+
+            setInterval(createSnowflake, 300);
+        })();
+    </script>
+</body>
+
+</html>
