@@ -158,3 +158,11 @@ footer p {
 .coracoes {
     background-image: url('img/coracoes-removebg-preview.png');
 }
+
+.fundo {
+ background-color: rgba(238, 186, 48);
+ background-image: url('img/fundo\ \(1\).png');
+ background-repeat: repeat;
+ background-size: 400px;
+ border: 5px solid rgba(174, 0, 1);
+}

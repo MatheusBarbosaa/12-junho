@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áudio Automático</title>
+    <style>
+        #playButton {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio">
+        <source src="seu-audio.mp3" type="audio/mpeg">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+    <button id="playButton">Clique para ouvir o áudio</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('audio');
+            var playButton = document.getElementById('playButton');
+
+            // Tenta reproduzir o áudio automaticamente
+            audio.play().then(function() {
+                // Reprodução automática permitida
+                playButton.style.display = 'none';
+            }).catch(function(error) {
+                // Reprodução automática bloqueada
+                playButton.style.display = 'block';
+            });
+
+            // Adiciona evento ao botão para reproduzir o áudio quando clicado
+            playButton.addEventListener('click', function() {
+                audio.play();
+            });
+        });
+    </script>
+</body>
+</html>
