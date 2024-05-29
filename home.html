@@ -10,10 +10,7 @@
 </head>
 
 <body>
-    <!-- Efeito de neve -->
     <div id="snowfall"></div>
-
-    <!-- Header -->
     <header class="text-center py-5">
         <h1>Feliz Dia dos Namorados, baby tube</h1>
         <nav>
@@ -45,9 +42,10 @@
     </div>
 
     <!-- Galeria de Fotos -->
-    <div class="memories">
-        <section id="fotos" class="py-5 bg-light">
-            <div class="container">
+
+    <section id="fotos" class="py-5 bg-light">
+        <div class="container">
+            <div class="memories">
                 <h2 class="text-center">Algumas das nossas memórias</h2>
                 <div id="carouselFotos" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -82,23 +80,24 @@
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselFotos" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselFotos" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Próximo</span>
-                    </a>
                 </div>
+                <a class="carousel-control-prev" href="#carouselFotos" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselFotos" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
     </div>
     <!-- Galeria de Vídeos -->
     <div class="fundo">
         <section id="videos" class="py-5">
             <div class="container">
-                <h2 class="text-center">Nossos Vídeos</h2>
+                <h2 class="text-center" style="color: #ffffff;">Nossos Vídeos</h2>
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -112,25 +111,33 @@
                                 allowfullscreen></iframe>
                         </div>
                     </div>
+                    <br>
+                    <br>
+                    <h2 class="text-center"  style="color: #ffffff;">Aqui foi onde tudo começou!!</h2>
+                    <div class="col-md-6 mb-4">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="videos/WhatsApp Video 2024-05-29 at 19.54.58.mp4"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
-            </div>
         </section>
     </div>
-        <!-- Seção de Contato -->
-        <section id="contato" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center">Deixe uma Mensagem</h2>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" class="form-control" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
+    <!-- Seção de Contato -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Deixe uma Mensagem</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" class="form-control" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="text-center py-3">
         <p>&copy; 2024 - Desenvolvido por Matheus Santos para Rayssa&#10084;</p>
