@@ -154,3 +154,7 @@ footer p {
         transform: translateY(100vh);
     }
 }
+
+.coracoes {
+    background-image: url('img/coracoes-removebg-preview.png');
+}
