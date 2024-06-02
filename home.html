@@ -96,7 +96,7 @@
     <!-- Galeria de Vídeos -->
     <div class="fundo">
         <section id="videos" class="py-5">
-            <div class="container">
+            <div class="container" id="borda">
                 <h2 class="text-center" style="color: #ffffff;">Nossos Vídeos</h2>
                 <div class="row">
                     <div class="col-md-6 mb-4">
@@ -113,7 +113,7 @@
                     </div>
                     <br>
                     <br>
-                    <h2 class="text-center"  style="color: #ffffff;">Aqui foi onde tudo começou!!</h2>
+                    <h2 class="text-center" style="color: #ffffff;">Aqui foi onde tudo começou!!</h2>
                     <div class="col-md-6 mb-4">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="videos/WhatsApp Video 2024-05-29 at 19.54.58.mp4"
@@ -123,6 +123,76 @@
                 </div>
         </section>
     </div>
+
+    <!-- Seção de Lugares para Visitar Juntos -->
+    <section id="lugares" class="py-5">
+        <div class="container">
+            <h2 class="text-center" style="color: white;">Lugares que iremos Juntos</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_640,q_75,w_640,x_3015,y_1902/v1/clients/orlandofl/8500_wwhm_lifestyle_father_son_castle_57e99bc3-ffeb-4d6c-a8fb-daf1dc2c0322.jpg"
+                            class="card-img-top" alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">Hogwarts, EUA</h5>
+                            <p class="card-text" style="color: black;">Conhecer pessoalmentea cidade da nossa saga preferia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://cdn.panrotas.com.br/portal-panrotas-statics/media-files-cache/301557/5a40afb3bb314a2fabff58d118a15ed8universalorlandoresort/0,32,1000,597/670,400,0.39/0/default.jpg"
+                            class="card-img-top" alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">Universal, EUA</h5>
+                            <p class="card-text" style="color: black;">Ainda nos Estados Unidos, porque iremos conhecer vários pontos turísticos por lá :)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.viajaquepassa.com.br/wp-content/uploads/2021/02/torre-eiffel-paris.png"
+                            class="card-img-top" alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">París, França</h5>
+                            <p class="card-text" style="color: black;">París é clichê, todo rico precisa ir lá, por isso também iremos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.almadeviajante.com/wp-content/uploads/veneza-grand-canal.jpg"
+                            class="card-img-top" alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">Veneza, Itália</h5>
+                            <p class="card-text" style="color: black;">Vamos pra lá, porque ela vai ser coberta por água um dia e precisamos ter história ne, pra dizer que já fomos em atlântida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/Fpn1imb9qZg/maxresdefault.jpg"
+                            class="card-img-top" alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">Show de ColdPlay</h5>
+                            <p class="card-text" style="color: black;">Iremos a um show de coldplay pra cantarmos clocks juntos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/34/2d/28/caption.jpg?w=1400&h=1400&s=1&cx=662&cy=604&chk=v1_8984ddf3493edfb8c896"
+                            class="card-img-top" alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">EUA, Nevada, Las Vegas</h5>
+                            <p class="card-text" style="color: black;">Iremos a Las Vegas, pois lá só tem milionários e seremos um.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção de Contato -->
     <section id="contato" class="py-5 bg-light">
         <div class="container">
@@ -146,35 +216,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Script para efeito de neve -->
-    <script>
-        (function () {
-            const snowContainer = document.getElementById('snowfall');
-            const snowflakeCount = 100;
-
-            function createSnowflake() {
-                const snowflake = document.createElement('div');
-                snowflake.className = 'snowflake';
-                snowflake.style.width = Math.random() * 5 + 2 + 'px';
-                snowflake.style.height = snowflake.style.width;
-                snowflake.style.left = Math.random() * window.innerWidth + 'px';
-                snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-                snowflake.style.animationDelay = Math.random() * 5 + 's';
-                snowContainer.appendChild(snowflake);
-
-                snowflake.addEventListener('animationend', function () {
-                    snowflake.remove();
-                });
-            }
-
-            for (let i = 0; i < snowflakeCount; i++) {
-                setTimeout(createSnowflake, Math.random() * 5000);
-            }
-
-            setInterval(createSnowflake, 300);
-        })();
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
