@@ -25,37 +25,8 @@
 })();
 
 
-
-
-
-// Dados dos lugares para visitar
-const lugaresParaVisitar = [
-    {
-        nome: "Paris, França",
-        imagem: "img/paris.jpg",
-        descricao: "Explore a Cidade Luz e seus pontos turísticos icônicos, como a Torre Eiffel e o Louvre."
-    },
-    // Adicione mais destinos conforme necessário
-];
-
-// Função para criar cartões de destino
-function criarCartoesDeDestino() {
-    const lugaresContainer = document.querySelector('#lugares .row');
-    lugaresParaVisitar.forEach(lugar => {
-        const cardHtml = `
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="${lugar.imagem}" class="card-img-top" alt="${lugar.nome}">
-                    <div class="card-body">
-                        <h5 class="card-title">${lugar.nome}</h5>
-                        <p class="card-text">${lugar.descricao}</p>
-                    </div>
-                </div>
-            </div>
-        `;
-        lugaresContainer.innerHTML += cardHtml;
-    });
-}
-
-// Chame a função para criar os cartões quando a página carregar
-window.addEventListener('load', criarCartoesDeDestino);
+/* CARTÃO */
+const envelope = document.querySelector('.envelope-wrapper');
+envelope.addEventListener('click', () => {
+    envelope.classList.toggle('flap');
+});
