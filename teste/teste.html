@@ -3,232 +3,329 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        @import url('https://fonts.cdnfonts.com/css/harry-potter');
+    <title>CodePen - flower</title>
+   <link rel="stylesheet" href="test.css">
 
-        :root {
-            --primary: #fff;
-            --bg-color: rgba(174, 0, 1);
-            --bg-envelope-color: #9b9b9b;
-            --envelope-tab: #ecdeb8;
-            --envelope-cover: #e6cfa7;
-            --shadow-color: rgba(0, 0, 0, 0.2);
-            --txt-color: #444;
-            --heart-color: rgb(255, 0, 0);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('./img/bandeirinhas.png');
-            background-size: 1500px;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            background-color: rgb(124, 2, 2);
-        }
-
-        .container {
-            height: 100vh;
-            display: grid;
-            place-items: center;
-        }
-
-        .envelope-wrapper {
-            background: var(--bg-envelope-color);
-            box-shadow: 0 0 40px var(--shadow-color);
-        }
-
-        .envelope {
-            position: relative;
-            width: 300px;
-            height: 230px;
-        }
-
-        .envelope::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            z-index: 2;
-            border-top: 130px solid var(--envelope-tab);
-            border-right: 150px solid transparent;
-            border-left: 150px solid transparent;
-            transform-origin: top;
-            transition: all 0.5s ease-in-out 0.7s;
-        }
-
-        .envelope::after {
-            content: "";
-            position: absolute;
-            z-index: 2;
-            width: 0px;
-            height: 0px;
-            border-top: 130px solid transparent;
-            border-right: 150px solid var(--envelope-cover);
-            border-bottom: 100px solid var(--envelope-cover);
-            border-left: 150px solid var(--envelope-cover);
-        }
-
-        .letter {
-            position: absolute;
-            right: 20%;
-            bottom: 0;
-            width: 54%;
-            height: 80%;
-            background: var(--primary);
-            text-align: center;
-            transition: all 1s ease-in-out;
-            box-shadow: 0 0 5px var(--shadow-color);
-            padding: 20px 10px;
-        }
-
-        .text {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: var(--txt-color);
-            text-align: left;
-            font-size: 10px;
-        }
-
-        .heart {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 15px;
-            height: 15px;
-            background: var(--heart-color);
-            z-index: 4;
-            transform: translate(-50%, -20%) rotate(45deg);
-            transition: transform 0.5s ease-in-out 1s;
-            box-shadow: 0 1px 6px var(--shadow-color);
-            cursor: pointer;
-        }
-
-        .heart:before,
-        .heart:after {
-            content: "";
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: var(--heart-color);
-            border-radius: 50%;
-        }
-
-        .heart:before {
-            top: -7.5px;
-        }
-
-        .heart:after {
-            right: 7.5px;
-        }
-
-        .flap .envelope::before {
-            transform: rotateX(180deg);
-            z-index: 0;
-        }
-
-        .flap .letter {
-            bottom: 100px;
-            transform: scale(1.5);
-            transition-delay: 1s;
-        }
-
-        .flap .heart {
-            transform: rotate(90deg);
-            transition-delay: 0.4s;
-        }
-
-        .surprise-section {
-            background-color: rgba(174, 0, 1);
-            padding: 50px 0;
-            text-align: center;
-            border: 5px solid rgba(238, 186, 48);
-        }
-
-        .surprise-section h2 {
-            font-family: 'Harry Potter', sans-serif;
-            font-size: 2.5em;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .surprise-section .surprise-link {
-            display: inline-block;
-            background-color: rgba(238, 186, 48);
-            color: #080808;
-            text-decoration: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 5px;
-            font-family: 'Harry Potter', sans-serif;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .surprise-section .surprise-link:hover {
-            background-color: #555;
-        }
-
-        #background-music {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Envelope Animado -->
-    <div class="container">
-        <div class="envelope-wrapper">
-            <div class="envelope">
-                <div class="letter">
-                    <div class="text">
-                        <strong>Amor, que tal um forrozin?</strong>
-                        <p>
-                            Amo você
-                            Já dá pra ver que meu olhar diz tudo
-                            Meu coração não fala, fica mudo
-                            Até parece nem me conhecer
-                            Só pra te ver
-                            Já andei tantas léguas de saudade
-                            Vivi em busca da felicidade
-                            Fazendo tudo pra não te perder
-                            E o bem-querer que toma conta do meu coração
-                            Já 'tá sabendo que toda paixão
-                            Que eu preciso só acho em você...
-                        </p>
-                    </div>
+    <!-- partial:index.partial.html -->
+    <!--  
+ 
+  CSS Blossoming Flowers at Magical Night.
+  I've taken some inspiration by Yup Nguyen's Artwork: https://dribbble.com/shots/11096994-Virtual-Garden.
+  Made with Pure CSS & ♥
+-->
+
+    <body class="not-loaded">
+        <div class="night"></div>
+        <div class="flowers">
+            <div class="flower flower--1">
+                <div class="flower__leafs flower__leafs--1">
+                    <div class="flower__leaf flower__leaf--1"></div>
+                    <div class="flower__leaf flower__leaf--2"></div>
+                    <div class="flower__leaf flower__leaf--3"></div>
+                    <div class="flower__leaf flower__leaf--4"></div>
+                    <div class="flower__white-circle"></div>
+
+                    <div class="flower__light flower__light--1"></div>
+                    <div class="flower__light flower__light--2"></div>
+                    <div class="flower__light flower__light--3"></div>
+                    <div class="flower__light flower__light--4"></div>
+                    <div class="flower__light flower__light--5"></div>
+                    <div class="flower__light flower__light--6"></div>
+                    <div class="flower__light flower__light--7"></div>
+                    <div class="flower__light flower__light--8"></div>
+
+                </div>
+                <div class="flower__line">
+                    <div class="flower__line__leaf flower__line__leaf--1"></div>
+                    <div class="flower__line__leaf flower__line__leaf--2"></div>
+                    <div class="flower__line__leaf flower__line__leaf--3"></div>
+                    <div class="flower__line__leaf flower__line__leaf--4"></div>
+                    <div class="flower__line__leaf flower__line__leaf--5"></div>
+                    <div class="flower__line__leaf flower__line__leaf--6"></div>
                 </div>
             </div>
-            <div class="heart"></div>
+
+            <div class="flower flower--2">
+                <div class="flower__leafs flower__leafs--2">
+                    <div class="flower__leaf flower__leaf--1"></div>
+                    <div class="flower__leaf flower__leaf--2"></div>
+                    <div class="flower__leaf flower__leaf--3"></div>
+                    <div class="flower__leaf flower__leaf--4"></div>
+                    <div class="flower__white-circle"></div>
+
+                    <div class="flower__light flower__light--1"></div>
+                    <div class="flower__light flower__light--2"></div>
+                    <div class="flower__light flower__light--3"></div>
+                    <div class="flower__light flower__light--4"></div>
+                    <div class="flower__light flower__light--5"></div>
+                    <div class="flower__light flower__light--6"></div>
+                    <div class="flower__light flower__light--7"></div>
+                    <div class="flower__light flower__light--8"></div>
+
+                </div>
+                <div class="flower__line">
+                    <div class="flower__line__leaf flower__line__leaf--1"></div>
+                    <div class="flower__line__leaf flower__line__leaf--2"></div>
+                    <div class="flower__line__leaf flower__line__leaf--3"></div>
+                    <div class="flower__line__leaf flower__line__leaf--4"></div>
+                </div>
+            </div>
+
+            <div class="flower flower--3">
+                <div class="flower__leafs flower__leafs--3">
+                    <div class="flower__leaf flower__leaf--1"></div>
+                    <div class="flower__leaf flower__leaf--2"></div>
+                    <div class="flower__leaf flower__leaf--3"></div>
+                    <div class="flower__leaf flower__leaf--4"></div>
+                    <div class="flower__white-circle"></div>
+
+                    <div class="flower__light flower__light--1"></div>
+                    <div class="flower__light flower__light--2"></div>
+                    <div class="flower__light flower__light--3"></div>
+                    <div class="flower__light flower__light--4"></div>
+                    <div class="flower__light flower__light--5"></div>
+                    <div class="flower__light flower__light--6"></div>
+                    <div class="flower__light flower__light--7"></div>
+                    <div class="flower__light flower__light--8"></div>
+
+                </div>
+                <div class="flower__line">
+                    <div class="flower__line__leaf flower__line__leaf--1"></div>
+                    <div class="flower__line__leaf flower__line__leaf--2"></div>
+                    <div class="flower__line__leaf flower__line__leaf--3"></div>
+                    <div class="flower__line__leaf flower__line__leaf--4"></div>
+                </div>
+            </div>
+
+            <div class="grow-ans" style="--d:1.2s">
+                <div class="flower__g-long">
+                    <div class="flower__g-long__top"></div>
+                    <div class="flower__g-long__bottom"></div>
+                </div>
+            </div>
+
+            <div class="growing-grass">
+                <div class="flower__grass flower__grass--1">
+                    <div class="flower__grass--top"></div>
+                    <div class="flower__grass--bottom"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+                    <div class="flower__grass__overlay"></div>
+                </div>
+            </div>
+
+            <div class="growing-grass">
+                <div class="flower__grass flower__grass--2">
+                    <div class="flower__grass--top"></div>
+                    <div class="flower__grass--bottom"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+                    <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+                    <div class="flower__grass__overlay"></div>
+                </div>
+            </div>
+
+            <div class="grow-ans" style="--d:2.4s">
+                <div class="flower__g-right flower__g-right--1">
+                    <div class="leaf"></div>
+                </div>
+            </div>
+
+            <div class="grow-ans" style="--d:2.8s">
+                <div class="flower__g-right flower__g-right--2">
+                    <div class="leaf"></div>
+                </div>
+            </div>
+
+            <div class="grow-ans" style="--d:2.8s">
+                <div class="flower__g-front">
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
+                        <div class="flower__g-front__leaf"></div>
+                    </div>
+                    <div class="flower__g-front__line"></div>
+                </div>
+            </div>
+
+            <div class="grow-ans" style="--d:3.2s">
+                <div class="flower__g-fr">
+                    <div class="leaf"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
+                    <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--0">
+                <div class="grow-ans" style="--d:3s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:2.2s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.4s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.6s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--1">
+                <div class="grow-ans" style="--d:3.6s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.8s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:4s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.2s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--2">
+                <div class="grow-ans" style="--d:4s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.2s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.4s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.6s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--3">
+                <div class="grow-ans" style="--d:4s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.2s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:3s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.6s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--4">
+                <div class="grow-ans" style="--d:4s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.2s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:3s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.6s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--5">
+                <div class="grow-ans" style="--d:4s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.2s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:3s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.6s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--6">
+                <div class="grow-ans" style="--d:4.2s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.4s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.6s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:4.8s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
+
+            <div class="long-g long-g--7">
+                <div class="grow-ans" style="--d:3s">
+                    <div class="leaf leaf--0"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.2s">
+                    <div class="leaf leaf--1"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.5s">
+                    <div class="leaf leaf--2"></div>
+                </div>
+                <div class="grow-ans" style="--d:3.6s">
+                    <div class="leaf leaf--3"></div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <!-- Música -->
-    <audio id="background-music" src="audio/01 Seu olhar não mente.mp3" controls autoplay></audio>
-
+    </body>
+    <!-- partial -->
     <script>
-        const envelope = document.querySelector('.envelope-wrapper');
-        const music = document.getElementById('background-music');
-
-        envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
-            if (envelope.classList.contains('flap')) {
-                music.play();
-            } else {
-                music.pause();
-                music.currentTime = 0;
-            }
-        });
+        onload = () => {
+            const c = setTimeout(() => {
+                document.body.classList.remove("not-loaded");
+                clearTimeout(c);
+            }, 1000);
+        };
     </script>
+
 </body>
 
 </html>
