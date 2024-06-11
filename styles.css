@@ -1,10 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/harry-potter');
-  
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     color: #000000;
-     padding-top: 150px;
+    padding-top: 150px;
     /* Corrigido para manter o texto visível */
 }
 
@@ -24,7 +24,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1;
-    
+
 }
 
 #borda {
@@ -171,10 +171,17 @@ footer p {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
-header h1, section h2 {
+
+header h1,
+section h2 {
     animation: fadeIn 2s ease-in;
 }
 
@@ -183,16 +190,16 @@ header h1, section h2 {
 }
 
 .fundo {
- background-color: rgba(238, 186, 48);
- background-image: url('img/fundo\ \(1\).png');
- background-repeat: repeat;
- background-size: 400px;
- border: 5px solid rgba(174, 0, 1);
+    background-color: rgba(238, 186, 48);
+    background-image: url('img/fundo\ \(1\).png');
+    background-repeat: repeat;
+    background-size: 400px;
+    border: 5px solid rgba(174, 0, 1);
 }
 
 .memories {
-background-image: url('img/hogwarts.jpg');
-border: 5px solid rgba(174, 0, 1);
+    background-image: url('img/hogwarts.jpg');
+    border: 5px solid rgba(174, 0, 1);
 }
 
 
@@ -226,10 +233,11 @@ border: 5px solid rgba(174, 0, 1);
     padding: 15px 30px;
     font-size: 1.2em;
     border-radius: 5px;
-    font-family:'Harry Potter', sans-serif;
+    font-family: 'Harry Potter', sans-serif;
     transition: background-color 0.3s ease-in-out;
 }
 
 .surprise-section .surprise-link:hover {
     background-color: #555;
 }
+

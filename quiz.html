@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=88rReG8q5Os9&format=png&color=000000" type="image/x-icon">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz de Harry Potter</h1>
+        <div class="question-container">
+            <p class="question"></p>
+            <ul class="options"></ul>
+        </div>
+        <div class="feedback"></div>
+        <div class="score"></div>
+    </div>
+<script>const quizData = [
+    {
+        question: "Qual é o nome completo do Harry Potter?",
+        options: ["Harry James Potter", "Harry John Potter", "Harry Alfred Potter", "Harry William Potter"],
+        answer: "Harry James Potter"
+    },
+    {
+        question: "Quem é o diretor de Hogwarts?",
+        options: ["Alvo Dumbledore", "Severus Snape", "Minerva McGonagall", "Rúbeo Hagrid"],
+        answer: "Alvo Dumbledore"
+    },
+    {
+        question: "Qual é o feitiço usado para desarmar?",
+        options: ["Expelliarmus", "Lumos", "Wingardium Leviosa", "Avada Kedavra"],
+        answer: "Expelliarmus"
+    },
+    {
+        question: "Qual é o Patrono de Hermione?",
+        options: ["Lontra", "Lebre", "Gato", "Cervo"],
+        answer: "Lontra"
+    },
+    {
+        question: "Qual é a casa do Draco Malfoy?",
+        options: ["Sonserina", "Grifinória", "Lufa-Lufa", "Corvinal"],
+        answer: "Sonserina"
+    }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+const questionElement = document.querySelector(".question");
+const optionsElement = document.querySelector(".options");
+const feedbackElement = document.querySelector(".feedback");
+const scoreElement = document.querySelector(".score");
+
+function loadQuestion() {
+    const currentQuestion = quizData[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+    optionsElement.innerHTML = "";
+
+    currentQuestion.options.forEach(option => {
+        const li = document.createElement("li");
+        li.textContent = option;
+        li.addEventListener("click", () => checkAnswer(option));
+        optionsElement.appendChild(li);
+    });
+}
+
+function checkAnswer(selectedOption) {
+    const currentQuestion = quizData[currentQuestionIndex];
+
+    if (selectedOption === currentQuestion.answer) {
+        feedbackElement.textContent = "Correto!";
+        score++;
+    } else {
+        feedbackElement.textContent = `Errado! A resposta correta é "${currentQuestion.answer}".`;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < quizData.length) {
+        setTimeout(() => {
+            feedbackElement.textContent = "";
+            loadQuestion();
+        }, 1000);
+    } else {
+        setTimeout(() => {
+            feedbackElement.textContent = "";
+            showFinalScore();
+        }, 1000);
+    }
+}
+
+function showFinalScore() {
+    questionElement.textContent = "Fim do Quiz! Parabéns, amor tube";
+    optionsElement.innerHTML = "";
+    scoreElement.textContent = `Sua pontuação: ${score} de ${quizData.length}`;
+}
+
+loadQuestion();</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* SESSÃO DE JOGO */
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+
+@font-face {
+    font-family: 'Harry Potter', sans-serif;
+    src: url('https://www.wfonts.com/download/data/2016/06/24/harry-p/harr___.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-image: url(img/hogwarts.jpg);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-family: 'Harry Potter', sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+}
+
+.options li {
+    background-color: #444444;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.options li:hover {
+    background-color: #555555;
+}
+
+.feedback {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.score {
+    font-size: 22px;
+    margin-top: 20px;
+}
