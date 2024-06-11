@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta de amor</title>
-    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=88rReG8q5Os9&format=png&color=000000" type="image/x-icon">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/harry-potter.png" type="image/x-icon">
     <style>
         @import url('https://fonts.cdnfonts.com/css/harry-potter');
 
@@ -20,10 +20,13 @@
             --heart-color: rgb(255, 0, 0);
         }
 
-        body {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        body {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -41,18 +44,18 @@
             place-items: center;
         }
 
-        .container>.envelope-wrapper {
+        .envelope-wrapper {
             background: var(--bg-envelope-color);
             box-shadow: 0 0 40px var(--shadow-color);
         }
 
-        .envelope-wrapper>.envelope {
+        .envelope {
             position: relative;
             width: 300px;
             height: 230px;
         }
 
-        .envelope-wrapper>.envelope::before {
+        .envelope::before {
             content: "";
             position: absolute;
             top: 0;
@@ -64,7 +67,7 @@
             transition: all 0.5s ease-in-out 0.7s;
         }
 
-        .envelope-wrapper>.envelope::after {
+        .envelope::after {
             content: "";
             position: absolute;
             z-index: 2;
@@ -76,7 +79,7 @@
             border-left: 150px solid var(--envelope-cover);
         }
 
-        .envelope>.letter {
+        .letter {
             position: absolute;
             right: 20%;
             bottom: 0;
@@ -89,7 +92,7 @@
             padding: 20px 10px;
         }
 
-        .envelope>.letter>.text {
+        .text {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: var(--txt-color);
             text-align: left;
@@ -128,20 +131,56 @@
             right: 7.5px;
         }
 
-        .flap>.envelope:before {
+        .flap .envelope::before {
             transform: rotateX(180deg);
             z-index: 0;
         }
 
-        .flap>.envelope>.letter {
+        .flap .letter {
             bottom: 100px;
             transform: scale(1.5);
             transition-delay: 1s;
         }
 
-        .flap>.heart {
+        .flap .heart {
             transform: rotate(90deg);
             transition-delay: 0.4s;
+        }
+
+        .surprise-section {
+            background-color: rgba(174, 0, 1);
+            padding: 50px 0;
+            text-align: center;
+            border: 5px solid rgba(238, 186, 48);
+        }
+
+        .surprise-section h2 {
+            font-family: 'Harry Potter', sans-serif;
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .surprise-section .surprise-link {
+            display: inline-block;
+            background-color: rgba(238, 186, 48);
+            color: #080808;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            font-family: 'Harry Potter', sans-serif;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .surprise-section .surprise-link:hover {
+            background-color: #555;
+        }
+
+        #background-music {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
         }
     </style>
 </head>
@@ -166,7 +205,6 @@
                             E o bem-querer que toma conta do meu coração
                             Já 'tá sabendo que toda paixão
                             Que eu preciso só acho em você...
-
                         </p>
                     </div>
                 </div>
@@ -176,7 +214,7 @@
     </div>
 
     <!-- Música -->
-    <audio id="background-music" src="seu-olhar-diz-tudo.mp3"></audio>
+    <audio id="background-music" src="audio/01 Seu olhar não mente.mp3" controls autoplay></audio>
 
     <script>
         const envelope = document.querySelector('.envelope-wrapper');

@@ -1,87 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrawApp</title>
-    <link rel="stylesheet" type="text/css" href="css/draw.css">
+    <title>Document</title>
     <style>
+        @import url('https://fonts.cdnfonts.com/css/harry-potter');
+
+        :root {
+            --primary: #fff;
+            --bg-color: rgba(174, 0, 1);
+            --bg-envelope-color: #9b9b9b;
+            --envelope-tab: #ecdeb8;
+            --envelope-cover: #e6cfa7;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --txt-color: #444;
+            --heart-color: rgb(255, 0, 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./img/bandeirinhas.png');
+            background-size: 1500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-color: rgb(124, 2, 2);
+        }
 
-canvas {
-    border: 1px solid #000;
-}
+        .container {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
 
-.controls {
-    margin-top: 20px;
-}
+        .envelope-wrapper {
+            background: var(--bg-envelope-color);
+            box-shadow: 0 0 40px var(--shadow-color);
+        }
 
-.controls input[type="color"], .controls input[type="range"], .controls button {
-    margin-right: 10px;
-}
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 230px;
+        }
 
+        .envelope::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            border-top: 130px solid var(--envelope-tab);
+            border-right: 150px solid transparent;
+            border-left: 150px solid transparent;
+            transform-origin: top;
+            transition: all 0.5s ease-in-out 0.7s;
+        }
+
+        .envelope::after {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            width: 0px;
+            height: 0px;
+            border-top: 130px solid transparent;
+            border-right: 150px solid var(--envelope-cover);
+            border-bottom: 100px solid var(--envelope-cover);
+            border-left: 150px solid var(--envelope-cover);
+        }
+
+        .letter {
+            position: absolute;
+            right: 20%;
+            bottom: 0;
+            width: 54%;
+            height: 80%;
+            background: var(--primary);
+            text-align: center;
+            transition: all 1s ease-in-out;
+            box-shadow: 0 0 5px var(--shadow-color);
+            padding: 20px 10px;
+        }
+
+        .text {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: var(--txt-color);
+            text-align: left;
+            font-size: 10px;
+        }
+
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background: var(--heart-color);
+            z-index: 4;
+            transform: translate(-50%, -20%) rotate(45deg);
+            transition: transform 0.5s ease-in-out 1s;
+            box-shadow: 0 1px 6px var(--shadow-color);
+            cursor: pointer;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: var(--heart-color);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -7.5px;
+        }
+
+        .heart:after {
+            right: 7.5px;
+        }
+
+        .flap .envelope::before {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+
+        .flap .letter {
+            bottom: 100px;
+            transform: scale(1.5);
+            transition-delay: 1s;
+        }
+
+        .flap .heart {
+            transform: rotate(90deg);
+            transition-delay: 0.4s;
+        }
+
+        .surprise-section {
+            background-color: rgba(174, 0, 1);
+            padding: 50px 0;
+            text-align: center;
+            border: 5px solid rgba(238, 186, 48);
+        }
+
+        .surprise-section h2 {
+            font-family: 'Harry Potter', sans-serif;
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .surprise-section .surprise-link {
+            display: inline-block;
+            background-color: rgba(238, 186, 48);
+            color: #080808;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            font-family: 'Harry Potter', sans-serif;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .surprise-section .surprise-link:hover {
+            background-color: #555;
+        }
+
+        #background-music {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+        }
     </style>
 </head>
+
 <body>
-    <canvas id="canvas"></canvas>
-    <div class="controls">
-        <input type="color" id="colorPicker">
-        <input type="range" id="brushSize" min="1" max="50" value="10">
-        <button onclick="clearCanvas()">Clear</button>
+    <!-- Envelope Animado -->
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Amor, que tal um forrozin?</strong>
+                        <p>
+                            Amo você
+                            Já dá pra ver que meu olhar diz tudo
+                            Meu coração não fala, fica mudo
+                            Até parece nem me conhecer
+                            Só pra te ver
+                            Já andei tantas léguas de saudade
+                            Vivi em busca da felicidade
+                            Fazendo tudo pra não te perder
+                            E o bem-querer que toma conta do meu coração
+                            Já 'tá sabendo que toda paixão
+                            Que eu preciso só acho em você...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
     </div>
 
-    <script src="js/draw.js"></script>
+    <!-- Música -->
+    <audio id="background-music" src="audio/01 Seu olhar não mente.mp3" controls autoplay></audio>
+
     <script>
-        const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const colorPicker = document.getElementById('colorPicker');
-const brushSize = document.getElementById('brushSize');
+        const envelope = document.querySelector('.envelope-wrapper');
+        const music = document.getElementById('background-music');
 
-let isDrawing = false;
-let lastX = 0;
-let lastY = 0;
-
-canvas.width = window.innerWidth - 50;
-canvas.height = window.innerHeight - 200;
-
-ctx.strokeStyle = colorPicker.value;
-ctx.lineJoin = 'round';
-ctx.lineCap = 'round';
-ctx.lineWidth = brushSize.value;
-
-function draw(e) {
-    if (!isDrawing) return;
-    ctx.beginPath();
-    ctx.moveTo(lastX, lastY);
-    ctx.lineTo(e.offsetX, e.offsetY);
-    ctx.stroke();
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-}
-
-canvas.addEventListener('mousedown', (e) => {
-    isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-});
-
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
-
-colorPicker.addEventListener('change', () => ctx.strokeStyle = colorPicker.value);
-brushSize.addEventListener('change', () => ctx.lineWidth = brushSize.value);
-
-function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+            if (envelope.classList.contains('flap')) {
+                music.play();
+            } else {
+                music.pause();
+                music.currentTime = 0;
+            }
+        });
     </script>
 </body>
+
 </html>
