@@ -33,3 +33,47 @@ envelope.addEventListener('click', () => {
 
 /* SESSÃO DO QUIZ */
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtém o formulário e o campo de entrada de mensagem
+    const form = document.getElementById('form-contato');
+    const mensagemInput = document.getElementById('mensagem');
+
+    // Adiciona um ouvinte de evento para o envio do formulário
+    form.addEventListener('submit', function (event) {
+        // Impede o comportamento padrão do formulário de ser enviado
+        event.preventDefault();
+
+        // Obtém o valor da mensagem do campo de entrada
+        const mensagem = mensagemInput.value;
+
+        // Verifica se há uma mensagem válida
+        if (mensagem.trim() !== '') {
+            // Salva a mensagem no localStorage
+            localStorage.setItem('mensagemContato', mensagem);
+
+            // Limpa o campo de entrada para futuras mensagens
+            mensagemInput.value = '';
+
+            // Confirmação para o usuário
+            alert('Mensagem de contato enviada com sucesso!');
+        } else {
+            // Se a mensagem estiver vazia, exibe um alerta informando ao usuário para inserir uma mensagem válida
+            alert('Por favor, insira uma mensagem antes de enviar.');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Recupera a mensagem salva do localStorage
+    const mensagemSalva = localStorage.getItem('mensagemContato');
+
+    // Verifica se há uma mensagem salva e a exibe
+    if (mensagemSalva) {
+        // Aqui você pode escolher como deseja exibir a mensagem salva, por exemplo, pode adicioná-la a um elemento HTML existente
+        const mensagemElement = document.createElement('p');
+        mensagemElement.textContent = mensagemSalva;
+        document.getElementById('mensagemSalva').appendChild(mensagemElement);
+    } else {
+        console.log('Nenhuma mensagem de contato salva encontrada.');
+    }
+});
